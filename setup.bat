@@ -94,11 +94,20 @@ echo.
 
 REM Install backend dependencies
 echo [STEP 3/5] Installing Python dependencies...
+echo [INFO] Upgrading pip...
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+if %errorlevel% neq 0 (
+    echo [WARN] Pip upgrade failed, continuing...
+)
+
+echo [INFO] Installing requirements...
+python -m pip install -r requirements.txt
 
 if %errorlevel% neq 0 (
     echo [ERROR] Failed to install Python dependencies
+    echo [INFO] This might be due to Python environment issues.
+    echo [INFO] If you're using Anaconda, try: conda install --file requirements.txt
+    echo [INFO] Or manually install: python -m pip install fastapi uvicorn pandas pydantic google-generativeai
     pause
     exit /b 1
 )
