@@ -126,17 +126,18 @@ git --version     # Should show git version
 - Click "Continue as Developer" on login page
 - Start using immediately
 
-**Option B: Setup Google OAuth** (For production)
-1. Go to [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
-2. Create OAuth 2.0 Client ID
-3. Add authorized origin: `http://localhost:3000`
-4. Copy Client ID
-5. Edit `frontend/.env`:
+**Option B: Setup Google OAuth** (For production and real Google login)
+1. Follow the complete guide: **[GOOGLE_OAUTH_SETUP.md](GOOGLE_OAUTH_SETUP.md)**
+2. Takes 10 minutes
+3. Get your Google Client ID
+4. Add to `frontend/.env`:
    ```env
    VITE_GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
    ```
 
-See [OAUTH_FIX.md](OAUTH_FIX.md) for detailed instructions.
+**Quick Setup:**
+- [Complete OAuth Setup Guide](GOOGLE_OAUTH_SETUP.md) - Step-by-step with screenshots
+- [OAuth Troubleshooting](OAUTH_FIX.md) - Fix common errors
 
 ---
 
@@ -361,10 +362,12 @@ pip install python-multipart openpyxl pandas
 
 ## 📖 Documentation
 
-- **[Setup Instructions](SETUP_INSTRUCTIONS.md)** - Detailed setup guide
-- **[New Features Summary](NEW_FEATURES_SUMMARY.md)** - Recent additions
-- **[OAuth Fix Guide](OAUTH_FIX.md)** - OAuth troubleshooting
-- **[API Documentation](http://localhost:8000/docs)** - Interactive API docs
+- **[Setup Instructions](SETUP_INSTRUCTIONS.md)** - Detailed setup guide for all features
+- **[Google OAuth Setup](GOOGLE_OAUTH_SETUP.md)** - Complete step-by-step OAuth configuration
+- **[OAuth Troubleshooting](OAUTH_FIX.md)** - Fix common OAuth errors
+- **[New Features Summary](NEW_FEATURES_SUMMARY.md)** - Documentation of recent additions
+- **[Client Setup Guide](CLIENT_SETUP.md)** - Simple guide for end users
+- **[API Documentation](http://localhost:8000/docs)** - Interactive API docs (when server running)
 
 ---
 
